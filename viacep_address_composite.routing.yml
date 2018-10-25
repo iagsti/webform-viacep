@@ -1,0 +1,7 @@
+viacep_address_composite.settings_form:
+  path: '/admin/config/system/viacep-address-composite'
+  defaults:
+    _title: 'Viacep settings'
+    _form: 'Drupal\viacep_address_composite\Form\SettingsForm'
+  requirements:
+    _permission: 'administer viacep_address_composite configuration'

@@ -1,0 +1,7 @@
+name: Viacep
+type: module
+description: Provê campos de endereço utilizando a API Viacep
+package: webform
+core: 8.x
+dependencies:
+  - webform
