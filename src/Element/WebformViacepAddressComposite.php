@@ -16,7 +16,11 @@ class WebformViacepAddressComposite extends WebformCompositeBase {
    * {@inheritdoc}
    */
   public function getInfo() {
-    return parent::getInfo();
+    return parent::getInfo() + [
+      '#attached' => [
+        'library' => ['viacep_address_composite/viacep_address_composite']
+      ]
+    ];
   }
 
   /**
