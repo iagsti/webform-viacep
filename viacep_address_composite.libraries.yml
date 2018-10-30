@@ -2,6 +2,7 @@
 viacep_address_composite:
   version: 1.x
   js:
+    js/viacep-class.js: {}
     js/viacep-address-composite.js: {}
   dependencies:
     - core/jquery
