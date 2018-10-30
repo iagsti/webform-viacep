@@ -16,11 +16,16 @@ class WebformViacepAddressComposite extends WebformCompositeBase {
    * {@inheritdoc}
    */
   public function getInfo() {
-    return parent::getInfo() + [
+
+
+    $info = parent::getInfo() + [
+      '#theme' => 'viacep_address_composite',
       '#attached' => [
-        'library' => ['viacep_address_composite/viacep_address_composite']
+        'library' => ['viacep_address_composite/viacep_class', 'viacep_address_composite/viacep_address_composite'],
       ]
     ];
+
+    return $info;
   }
 
   /**
@@ -36,48 +41,64 @@ class WebformViacepAddressComposite extends WebformCompositeBase {
    * {@inheritdoc}
    */
   public static function getCompositeElements(array $elements) {
-    
-    $html_id = Html::getUniqueId('webform_example_composite');
 
     $elements = [];
 
-    $elements['postal_code'] = [
+    $elements['viacep'] = [
+      '#type' => 'fieldgroup',
+      '#title' => t('Local'),
+      '#attributes' => ['class' => ['viacep-address-composite--group']],
+    ];
+
+    $elements['viacep']['postal_code'] = [
       '#type' => 'textfield',
       '#title' => t('CEP'),
-      '#attributes' => ['data-webform-composite-id' => $html_id . '--postal_code'],
+      '#attributes' => ['class' => ['viacep-address-composite--postal-code']],
+      '#wrapper_attributes' => ['class' => 'viacep-address-composite-js'],
     ];
 
-    $elements['address'] = [
+    $elements['viacep']['address'] = [
       '#type' => 'textfield',
       '#title' => t('Endereço'),
-      '#attributes' => ['data-webform-composite-id' => $html_id . '--address'],
+      '#attributes' => ['class' => ['viacep-address-composite--address']],
+      '#wrapper_attributes' => ['class' => ['viacep-address-composite-js']]
     ];
 
-    $elements['address_number'] = [
+    $elements['viacep']['address_number'] = [
       '#type' => 'textfield',
       '#title' => t('Número'),
-      '#attributes' => ['data-webform-composite-id' => $html_id . '--address_number'],
+      '#attributes' => ['class' => ['viacep-address-composite--address_number']],
+      '#wrapper_attributes' => ['class' => 'viacep-address-composite-js']
     ];
 
-    $elements['neighborhood'] = [
+    $elements['viacep']['neighborhood'] = [
       '#type' => 'textfield',
       '#title' => t('Bairro'),
-      '#attributes' => ['data-webform-composite-id' => $html_id . '--neighborhood'],
+      '#attributes' => ['class' => ['viacep-address-composite--neighborhood']],
+      '#wrapper_attributes' => ['class' => ['viacep-address-composite-js']]
     ];
 
-    $elements['city'] = [
+    $elements['viacep']['city'] = [
       '#type' => 'textfield',
       '#title' => t('Cidade'),
-      '#attributes' => ['data-webform-composite-id' => $html_id . '--city'],
+      '#attributes' => ['class' => ['viacep-address-composite--city']],
+      '#wrapper_attributes' => ['class' => 'viacep-address-composite-js']
     ];
 
-    $elements['state_province'] = [
+    $elements['viacep']['state_province'] = [
       '#type' => 'textfield',
       '#title' => t('Estado'),
-      '#attributes' => ['data-webform-composite-id' => $html_id . '--state_province'],
+      '#attributes' => ['class' => ['viacep-address-composite--state_province']],
+      '#wrapper_attributes' => ['class' => 'viacep-address-composite-js']
     ];
 
     return $elements;
+  }
+
+  protected static function getHtmlId() {
+
+    return Html::getUniqueId('viacep-address-composite');
+
   }
 
 }
