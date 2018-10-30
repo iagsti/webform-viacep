@@ -45,8 +45,7 @@ class WebformViacepAddressComposite extends WebformCompositeBase {
     $elements = [];
 
     $elements['viacep'] = [
-      '#type' => 'fieldgroup',
-      '#title' => t('Local'),
+      '#type' => 'container',
       '#attributes' => ['class' => ['viacep-address-composite--group']],
     ];
 
