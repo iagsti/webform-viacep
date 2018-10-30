@@ -33,12 +33,19 @@ class WebformViacepAddressComposite extends WebformCompositeBase {
    * {@inheritdoc}
    */
   protected function formatTextItemValue(array $element, WebformSubmissionInterface $webform_submission, array $options = []) {
+    
     $value = $this->getValue($element, $webform_submission, $options);
-    die(var_dump($value));
+    
     $lines = [];
-    $lines[] = ($value['postal_code'] ? $value['postal_code'] : '') .
-      ($value['address'] ? $value['address'] : '') .
-      ($value['address_number'] ? $value['address_number'] : '');
+    
+    $lines['postal_code'] = $value['postal_code'] ? $value['postal_code'] : '';
+    $lines['address'] = $value['address'] ? $value['address'] : '';
+    $lines['address_number'] = $value['address_number'] ? $value['address_number'] : '';
+    $lines['neighborhood'] = $value['neighborhood'] ? $value['neighborhood'] : '';
+    $lines['city'] = $value['city'] ? $value['city'] : '';
+    $lines['state_province'] = $value['state_province'] ? $value['state_province'] : '';
+ 
+
     return $lines;
   }
 
