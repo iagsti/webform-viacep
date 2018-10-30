@@ -4,7 +4,7 @@
   Drupal.behaviors.viacepAddressComposite = {
     attach: function (context, settings) {
       
-      let viacepFields = $('.viacep-address-composite--group', context);
+      let viacepFields = $('.viacep-address-composite--group', context).once('viacep-address-composite--group');
 
       let postalCodeField = viacepFields.find('.viacep-address-composite--postal-code');
       let addressField = viacepFields.find('.viacep-address-composite--address');
@@ -26,8 +26,6 @@
           neighborhood.val(response.bairro);
           cityField.val(response.localidade);
           stateField.val(response.uf);
-  
-          console.log(response);
   
         });
 
