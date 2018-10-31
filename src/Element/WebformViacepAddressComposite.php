@@ -89,10 +89,4 @@ class WebformViacepAddressComposite extends WebformCompositeBase {
     return $elements;
   }
 
-  protected static function getHtmlId() {
-
-    return Html::getUniqueId('viacep-address-composite');
-
-  }
-
 }
