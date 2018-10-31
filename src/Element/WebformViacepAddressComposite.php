@@ -68,7 +68,7 @@ class WebformViacepAddressComposite extends WebformCompositeBase {
     $elements['address_suplement'] = [
       '#type' => 'textfield',
       '#title' => t('Complemento'),
-      '#attributes' => ['class' => ['viacep-address-composite--address_suplement']],
+      '#attributes' => ['class' => ['viacep-address-composite--address_supplement']],
       '#wrapper_attributes' => ['class' => 'viacep-address-composite-js']
     ];
 
