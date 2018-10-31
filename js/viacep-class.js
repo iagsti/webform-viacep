@@ -8,7 +8,6 @@ class Viacep {
 
   createQuery () {
     if (this.postalCode) {
-        console.log(API);
         return API + this.postalCode + '/';
     }
     return null;
