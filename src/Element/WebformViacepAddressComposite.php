@@ -44,47 +44,42 @@ class WebformViacepAddressComposite extends WebformCompositeBase {
 
     $elements = [];
 
-    $elements['viacep'] = [
-      '#type' => 'container',
-      '#attributes' => ['class' => ['viacep-address-composite--group']],
-    ];
-
-    $elements['viacep']['postal_code'] = [
+    $elements['postal_code'] = [
       '#type' => 'textfield',
       '#title' => t('CEP'),
       '#attributes' => ['class' => ['viacep-address-composite--postal-code']],
       '#wrapper_attributes' => ['class' => 'viacep-address-composite-js'],
     ];
 
-    $elements['viacep']['address'] = [
+    $elements['address'] = [
       '#type' => 'textfield',
       '#title' => t('Endereço'),
       '#attributes' => ['class' => ['viacep-address-composite--address']],
       '#wrapper_attributes' => ['class' => ['viacep-address-composite-js']]
     ];
 
-    $elements['viacep']['address_number'] = [
+    $elements['address_number'] = [
       '#type' => 'textfield',
       '#title' => t('Número'),
       '#attributes' => ['class' => ['viacep-address-composite--address_number']],
       '#wrapper_attributes' => ['class' => 'viacep-address-composite-js']
     ];
 
-    $elements['viacep']['neighborhood'] = [
+    $elements['neighborhood'] = [
       '#type' => 'textfield',
       '#title' => t('Bairro'),
       '#attributes' => ['class' => ['viacep-address-composite--neighborhood']],
       '#wrapper_attributes' => ['class' => ['viacep-address-composite-js']]
     ];
 
-    $elements['viacep']['city'] = [
+    $elements['city'] = [
       '#type' => 'textfield',
       '#title' => t('Cidade'),
       '#attributes' => ['class' => ['viacep-address-composite--city']],
       '#wrapper_attributes' => ['class' => 'viacep-address-composite-js']
     ];
 
-    $elements['viacep']['state_province'] = [
+    $elements['state_province'] = [
       '#type' => 'textfield',
       '#title' => t('Estado'),
       '#attributes' => ['class' => ['viacep-address-composite--state_province']],
@@ -92,12 +87,6 @@ class WebformViacepAddressComposite extends WebformCompositeBase {
     ];
 
     return $elements;
-  }
-
-  protected static function getHtmlId() {
-
-    return Html::getUniqueId('viacep-address-composite');
-
   }
 
 }
