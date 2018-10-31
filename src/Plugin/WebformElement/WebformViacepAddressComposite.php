@@ -41,6 +41,7 @@ class WebformViacepAddressComposite extends WebformCompositeBase {
     $lines['postal_code'] = $value['postal_code'] ? $value['postal_code'] : '';
     $lines['address'] = $value['address'] ? $value['address'] : '';
     $lines['address_number'] = $value['address_number'] ? $value['address_number'] : '';
+    $lines['address_supplement'] = $value['address_supplement'] ? $$value['address_supplement'] : '';
     $lines['neighborhood'] = $value['neighborhood'] ? $value['neighborhood'] : '';
     $lines['city'] = $value['city'] ? $value['city'] : '';
     $lines['state_province'] = $value['state_province'] ? $value['state_province'] : '';
